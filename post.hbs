@@ -1,0 +1,76 @@
+
+{{!< default}}
+
+<div class="main-content-area ptb-70 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+             {{#post}}
+                <div class="single-post-details  entry-content">
+                    <div class="top-social-share">
+                        <ul>
+                            <li class="face"><a  target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="twitter"><a target="_blank" href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute='true'}}"><i class="fab fa-twitter"></i></a></li>
+                            <li class="pin"><a target="_blank" href="https://pinterest.com/pin/create/button/?{{url absolute="true"}}{{#if feature_image}}&media={{feature_image}}{{/if}}&description={{excerpt words="20"}}"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li class="dribble"><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                            <li class="ins"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="single-post-title">
+                        <h2>{{title}}</h2>
+                        <div class="post-meta">
+                          <p><span><i class="far fa-clock"></i>{{date published_at format="D MMMM Y"}}</span><span class="author"><i class="far fa-user"></i>{{authors}}</span></p>
+                        </div>
+                    </div>
+                    {{#if feature_image}}
+                     <img class="img-fluid" src="{{img_url feature_image}}" alt="{{title}}"/>
+                    {{/if}}
+                    <div class="p-details">
+                       {{content}}
+                    </div>
+                    <div class="article-author">
+                         {{#primary_author}}
+                            <div class="author-image">
+                                <a href="{{url}}"><img src="{{#if profile_image}}{{img_url profile_image}}{{else}}{{asset 'images/admin-author.jpg'}}{{/if}}" alt="{{title}}"/></a>
+                                <span><a href="{{url}}" class="kerry">{{name}}</a></span>
+                            </div>
+                            <div class="comment-meta">
+                                <p>{{bio}}</p>
+                                <div class="writer-social">
+                                    <ul>
+                                        <li class="face"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                        <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="pin"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                        <li class="ins"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        {{/primary_author}}
+                    </div>
+                    <div class="pagi-text themeix-pagination">
+                      {{#prev_post}}
+                        <p><a href="{{url}}">Previous</a></p>
+                       {{/prev_post}}
+                       {{#next_post}}
+                         <p class="float-right"><a href="{{url}}">Next</a></p>
+                       {{/next_post}}
+                    </div>
+                    <div class="recent-comment">
+                      {{> 'disqus_comments'}}
+                    </div>
+                   </div>
+               {{/post}}
+            </div>
+            <div class="col-lg-4">
+                <div class="right-sidebar">
+                <div class="sidebar-widget"> 
+                  {{> 'post_sidebar_add'}}
+                </div>
+                   {{> 'sidebar'}}
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+

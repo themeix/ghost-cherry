@@ -1,0 +1,16 @@
+<div class="feature-posts-wrapper owl-carousel"> 
+ {{#get 'posts' filter='featured:true'}}
+  {{#foreach posts}}
+   <div class="single-item no-padding">
+    <div class="top-fatured-post bg-1" style="background-image:url({{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/400x370.png'}}{{/if}});">
+        <div class="feature-post-details">
+            <h3><a href="{{url}}">{{title}}</a></h3>
+            <div class="post-meta">
+                <p><span><i class="far fa-clock"></i>{{date published_at format='D MMMM, Y'}}</span></p>
+            </div>
+        </div>
+    </div>
+  </div>
+ {{/foreach}}
+{{/get}}
+</div>

@@ -1,0 +1,45 @@
+<div class="category-post mt-70  wow fadeInUp" data-wow-duration="500ms" data-wow-delay="100ms">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="category-title">
+                <h3>Trending</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      {{#get "posts" include="tags,authors" filter="tag:trending" limit="1"}}
+        {{#foreach posts}}
+        <div class="col-lg-6 col-md-6">
+            <div class="category-feature-post">
+                <a href="{{url}}"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/350x265.png'}}{{/if}}" alt="{{title}}"/></a>
+                <h3><a href="{{url}}">{{title}}</a></h3>
+                 <div class="post-meta mb-3">
+                    <p><span><i class="far fa-clock"></i>{{date published_at format="D MMMM Y"}}</span><span class="author"><i class="far fa-user"></i>{{authors}}</span></p>
+                 </div>
+                <p>{{excerpt characters="145"}}</p>
+            </div>
+        </div>
+        {{/foreach}}
+      {{/get}}
+        <div class="col-lg-6 col-md-6">
+            <div class="row">
+            {{#get "posts" include="tags,authors" filter="tag:trending" limit="7"}}
+              {{#foreach posts}}
+                {{#unless @first}}
+                <div class="col-lg-6 col-md-6 mb-3">
+                    <div class="category-post-list">
+                        <div class="cat-post-inside mb-2 no-border">
+                            <a href="single-post.html"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/160x135.png'}}{{/if}}" alt="{{title}}"/></a>
+                            <div class="cat-post-details">
+                                <h3><a href="{{url}}">{{title}}</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                 {{/unless}}
+                {{/foreach}}
+              {{/get}}
+            </div>
+        </div>
+    </div>
+</div>

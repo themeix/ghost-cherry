@@ -1,0 +1,26 @@
+{{!< default}}
+
+<div class="main-content-area ptb-70 clearfix">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+		  <div class="page-wrapper">
+		   {{#post}}
+		    <div class="page-title">
+		       <h3>{{title}}</h3>		      
+		    </div>
+		    <div class="page-content">
+		     {{#if feature_image}}
+		      <div class="page-feature-img mb-3">
+		      	<img class="fluid-image" src="{{img_url feature_image}}" alt="">
+		      </div>
+		     {{/if}}
+		    	{{content}}
+		    </div>
+		    {{/post}}
+		   </div>
+         </div>
+ 
+     </div>
+    </div>
+</div>

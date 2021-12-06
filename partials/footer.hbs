@@ -1,0 +1,81 @@
+<div class="footer-area section-padding clearfix">
+    <div class="container">
+        <div class="sroll-button text-right">
+            <a href="#" class="scroll-top"><i class="fas fa-arrow-circle-up"></i></a>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget footer-social">
+                    <div class="widget-title">
+                        <h3>About Us</h3>
+                    </div>
+                    <p>Vivamus suscipit tortor et sapien porta, a facilisis leo interdum.Nulla libero nisl, convallis eget nulla ac Nulla libero nisl, convallis eget nulla </p>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    </ul>
+                   <div class="subscribe-form">
+                       {{> 'subscribe'}}
+                   </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget footer-post recent-posts-link">
+                    <div class="widget-title">
+                        <h3>Recent Post</h3>
+                    </div>
+                    <div class="footer-post-widget">
+                       {{#get 'posts' limit='4'}}
+                         {{#foreach posts}}
+                          <h4><a href="{{url}}">{{title}}</a></h4>                          
+                         {{/foreach}}
+                       {{/get}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget f-categories footer-post">
+                    <div class="widget-title">
+                        <h3>Tag Clouds</h3>
+                    </div>
+                    <ul>
+                       {{#get 'tags' include='count.posts' limit='6'}}
+                         {{#foreach tags}}
+                          <li><a href="{{url}}">{{name}} ({{count.posts}})</a></li>
+                         {{/foreach}}
+                       {{/get}}
+                    </ul>
+                </div>
+            </div>
+			            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget instagram-feed">
+                    <div class="widget-title">
+                        <h3>Contact Us</h3>
+                    </div>
+                    <p itemscope itemtype="http://schema.org/PostalAddress"> 
+						<span itemprop="name">Themeix LLC</span><br> 
+						<span itemprop="streetAddress">1663 Eagle Drive</span><br> 
+						<span itemprop="addressLocality">Livonia</span>, 
+						<span itemprop="addressRegion">MI</span> 
+						<span itemprop="postalCode">48150</span><br> 
+						<span itemprop="addressCountry">USA</span> 
+					</p>
+					<p>themeix@gmail.com</p>
+					<p>+123 456 7890</p>
+					
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-text text-center">
+                    <p>©Copyright - {{date format="Y"}} <a href="{{@site.url}}">{{@site.title}}</a> - Designed by <a href="https://themeix.com">Themeix</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

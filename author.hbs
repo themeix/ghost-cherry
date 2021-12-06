@@ -1,0 +1,55 @@
+{{!< default}}
+<div class="main-content-area clearfix">
+    <div class="container">
+        <div class="category-post">
+           <div class="header-banner pt-70"> 
+            <div class="row">
+                <div class="col-lg-12">
+                  {{#primary_author}}
+                    <div class="tag-header-title height-200" style="background-image:url({{img_url cover_image}});background-color:#1E3046">
+                      <div class="tag-info">
+                          <h4>{{name}}</h4>
+                          {{#if bio}}
+                           <p class="text-white">{{bio}}</p>
+                          {{/if}}
+                          <div class="author-s-connect">
+                            <ul>
+                                <li><a href="{{facebook_url}}"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{twitter_url}}"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="{{website}}"><i class="fas fa-globe"></i></a></li>
+                            </ul>
+                           </div>
+                      </div>
+                    </div>
+                  {{/primary_author}}
+                </div>
+            </div>
+            </div>
+            <div class="page-wrapper pb-70"> 
+             <div class="row">
+               {{#foreach posts}}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="category-feature-post post-cat">
+                        <a href="{{url}}"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/350x265.png'}}{{/if}}" alt="{{title}}"/></a>
+                        <h3><a href="{{url}}">{{title}}</a></h3>
+                         <div class="post-meta mb-3">
+                            <p><span><i class="far fa-clock"></i>{{date published_at format="D MMMM Y"}}</span><span class="author"><i class="far fa-user"></i>{{authors}}</span></p>
+                         </div>
+                         {{#if custom_excerpt}}
+                            <p>{{custom_excerpt}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+             {{/foreach}}
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="post-pagination">
+                        {{pagination}}
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

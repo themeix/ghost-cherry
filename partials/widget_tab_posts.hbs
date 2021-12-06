@@ -1,0 +1,39 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Recent Posts</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Older Posts</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="category-post-list">
+           {{#get "posts" include="tags,authors" limit="10"}}
+             {{#foreach posts}}
+              <div class="cat-post">
+                <a href="{{url}}"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset "images/120x120.png"}}{{/if}}" alt="{{title}}"/></a>
+                <div class="cat-post-details">
+                    <h3><a href="{{url}}">{{title}}</a></h3>
+                    
+                </div>
+              </div>
+            {{/foreach}}
+          {{/get}}        
+        </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="category-post-list">
+           {{#get "posts" include="tags,authors" limit="10" order="asc"}}
+             {{#foreach posts}}
+              <div class="cat-post">
+                <a href="{{url}}"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset "images/120x120.png"}}{{/if}}" alt="{{title}}"/></a>
+                <div class="cat-post-details">
+                    <h3><a href="{{url}}">{{title}}</a></h3>                     
+                </div>
+              </div>
+            {{/foreach}}
+          {{/get}}        
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{{!< default}}
+
+<div class=" main-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="page-container ptb-80"> 
+                <div class="page-title pb-3">
+                    <h3>TAGS</h3>
+                </div>
+                <div class="row">
+                   {{#get "tags" limit="all"}}
+                    {{#foreach tags}}
+                    <div class="col-md-4">
+                        <div class="single-post tag-post-item">
+                            <a class="tag-post" href="{{url}}"><span class="tag-feature-img height-260" style="background-image:url({{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'assets/img/400x300.png'}}{{/if}});"></span></a>
+                            <div class="tag-archive">
+                                <ul>
+                                    <li><a href="{{url}}">{{name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{/foreach}}
+                  {{/get}}
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

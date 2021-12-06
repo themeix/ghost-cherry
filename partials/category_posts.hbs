@@ -1,0 +1,13 @@
+<div class="feature-category-wrapper mt-30">
+    <div class="row">
+      {{#get 'tags' limit='3'}}
+        {{#foreach tags}}
+        <div class="col-lg-4 col-md-6">
+            <div class="tag-post-category height-250" style="background-image:url({{#if feature_image}}{{img_url feature_image}}{{else}}{{asset "images/350x250.png"}}{{/if}});">
+                <h4><a href="{{url}}">{{name}}</a></h4>
+            </div>
+        </div>
+        {{/foreach}}
+       {{/get}}
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{{!< default}}
+
+<div class="main-content-area ptb-70 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{> 'featured_carousel'}}
+            </div>
+        </div>
+        <div class="post-by-category mt-70 sm-mt-50">
+            <div class="top-three-posts">
+                {{> 'top_three_categories'}}
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="trending-posts">
+                        {{> 'trending_posts'}}
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                         <div class="banner-addss">
+                           <a href="https://themeix.com"><img src="{{asset 'images/2nd-banner.jpg'}}" alt="adds"/></a>
+                         </div>
+                        </div>
+                    </div>
+                    <div class="feature-posts">
+                        {{> 'special_category_posts'}}
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-70">
+                    {{> 'sidebar'}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

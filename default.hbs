@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+
+<head>
+    {{!-- meta info --}}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{!-- title --}}
+    <title>{{meta_title}}</title>
+    <!-- Themeix Min CSS -->
+    <link rel="stylesheet" href="{{asset "css/themeix.min.css"}}"/>
+    <!-- Google font -->
+ 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+</head>
+
+ {{ghost_head}}
+
+<body class="{{body_class}}">
+
+    {{> 'header'}}
+
+      {{{body}}}
+
+    {{> 'footer'}}
+
+    <!-- main  JS -->
+    <script src="{{asset "js/content-api.min.js"}}"></script>
+    <script src="{{asset "js/themeix.min.js"}}"></script>
+
+    {{ghost_foot}}
+
+</body>
+
+</html>

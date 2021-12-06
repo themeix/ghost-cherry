@@ -1,0 +1,10 @@
+<div class="sidebar-widget-title">
+    <h3>Tag Clouds</h3>
+</div>
+<ul>
+    {{#get "tags" limit="all"}}
+      {{#foreach tags}}
+        <li><a href="{{url}}">{{name}}</a></li>
+      {{/foreach}}
+    {{/get}}
+</ul>

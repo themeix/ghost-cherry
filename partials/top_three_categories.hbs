@@ -1,0 +1,120 @@
+<div class="row">
+    <div class="col-lg-4 col-sm-10">
+        <div class="category-post wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="category-title">
+                <h3>Nature</h3>
+                <div class="title-style"></div>
+            </div>
+            <div class="category-post-list">
+                {{#get "posts" filter="tag:nature" include="tags,authors"}} 
+                  {{#foreach posts}}
+                     {{#if @first}}
+                    <div class="category-feature-post">
+                      <a href="{{url}}"><img class="img_fluid" src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/350x265.png'}}{{/if}}" alt="{{title}}"/></a>
+                        <h3><a href="{{url}}">{{title}}</a></h3>
+                        <div class="post-meta">
+                            <p><span><i class="far fa-clock"></i>{{date published_at format="D MMMM Y"}}</span><span class="author"><i class="far fa-user"></i>{{authors}}</span></p>
+                        </div>
+                    </div>
+                    {{/if}}
+                  {{/foreach}}
+                {{/get}}
+                
+                {{#get "posts" limit="4" include="tags,authors" filter="tag:nature"}}
+                 {{#foreach posts}}
+                   {{#unless @first}}
+                    <div class="cat-post">
+                        <div class="cat-post-img">
+                            <a href="{{url}}"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/120x120.png'}}{{/if}}" alt="{{title}}"/></a>
+                        </div>
+                        <div class="cat-post-details">
+                           <h3><a href="{{url}}">{{title}}</a></h3>
+                          
+                        </div>
+                    </div>
+                   {{/unless}}
+                 {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-10">
+        <div class="category-post wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="category-title">
+                <h3>Technology</h3>
+                <div class="title-style"></div>
+            </div>
+            <div class="category-post-list">
+                {{#get "posts" include="tags,authors" filter="tag:technology"}}
+                  {{#foreach posts}}
+                    {{#if @first}}
+                    <div class="category-feature-post">
+                        <a href="{{url}}"><img class="img_fluid" src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/350x265.png'}}{{/if}}" alt="{{title}}"/></a>
+                        <h3><a href="{{url}}">{{title}}</a></h3>
+                        <div class="post-meta">
+                            <p><span><i class="far fa-clock"></i>{{date published_at format="D MMMM Y"}}</span><span class="author"><i class="far fa-user"></i>{{authors}}</span></p>
+                        </div>
+                    </div>
+                    {{/if}}
+                  {{/foreach}}
+                {{/get}}
+
+                {{#get "posts" limit="4" include="tags,authors" filter="tag:technology"}}
+                 {{#foreach posts}}
+                   {{#unless @first}}
+                    <div class="cat-post">
+                        <div class="cat-post-img">
+                            <a href="{{url}}"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/120x120.png'}}{{/if}}" alt="{{title}}"/></a>
+                        </div>
+                        <div class="cat-post-details">
+                           <h3><a href="{{url}}">{{title}}</a></h3>
+                          
+                        </div>
+                    </div>
+                   {{/unless}}
+                 {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-10">
+        <div class="category-post wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="category-title">
+                <h3>Fruits</h3>
+                <div class="title-style"></div>
+            </div>
+            <div class="category-post-list">
+                {{#get "posts" include="tags,authors" filter="tag:fruits"}}
+                  {{#foreach posts}}
+                    {{#if @first}}
+                    <div class="category-feature-post">
+                        <a href="{{url}}"><img class="img_fluid" src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/350x265.png'}}{{/if}}" alt="{{title}}"/></a>
+                        <h3><a href="{{url}}">{{title}}</a></h3>
+                        <div class="post-meta">
+                            <p><span><i class="far fa-clock"></i>{{date published_at format="D MMMM Y"}}</span><span class="author"><i class="far fa-user"></i>{{authors}}</span></p>
+                        </div>
+                    </div>
+                    {{/if}}
+                  {{/foreach}}
+                {{/get}}
+
+                {{#get "posts" limit="4" include="tags,authors" filter="tag:fruits"}}
+                 {{#foreach posts}}
+                   {{#unless @first}}
+                    <div class="cat-post">
+                        <div class="cat-post-img">
+                            <a href="{{url}}"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{asset 'images/120x120.png'}}{{/if}}" alt="{{title}}"/></a>
+                        </div>
+                        <div class="cat-post-details">
+                           <h3><a href="{{url}}">{{title}}</a></h3>
+                           
+                        </div>
+                    </div>
+                   {{/unless}}
+                 {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
